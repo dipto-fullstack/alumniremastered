@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A professional gallery with filter tabs for photos and videos.">
+    <title>Professional Gallery - Only Photos Tab</title>
+    <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Navigation Tabs -->
+        <div class="tabs">
+            <button class="tab-btn active" data-filter="all">All</button>
+            <button class="tab-btn" data-filter="photos">Photos</button>
+            <button class="tab-btn" data-filter="videos">Videos</button>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="gallery" id="gallery">
+            <!-- Photo Items -->
+            <div class="item photos">
+                <img src="https://via.placeholder.com/300x200" alt="Photo 1">
+            </div>
+            <div class="item photos">
+                <img src="https://via.placeholder.com/300x200" alt="Photo 2">
+            </div>
+            <div class="item photos">
+                <img src="https://via.placeholder.com/300x200" alt="Photo 3">
+            </div>
+
+            <!-- Video Items -->
+            <div class="item videos">
+                <video src="https://www.w3schools.com/html/mov_bbb.mp4" controls></video>
+            </div>
+            <div class="item videos">
+                <video src="https://www.w3schools.com/html/movie.mp4" controls></video>
+            </div>
+        </div>
+    </div>
+
+    <script src="gallery.js"></script>
+
+</body>
+</html>

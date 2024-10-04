@@ -1,0 +1,54 @@
+
+body {
+    background-image: url('clg.jpeg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); 
+    backdrop-filter: blur(5px); 
+    z-index: -1;
+  }
+  
+ 
+  .auth-card {
+    background-color: rgba(255, 255, 255, 0.85); 
+    border-radius: 12px;
+    backdrop-filter: blur(5px); 
+  }
+  
+  #enrollmentNumber, #password {
+    border: 1px solid #ced4da;
+    border-radius: 8px;
+    transition: 0.3s;
+  }
+  
+  #enrollmentNumber:focus, #password:focus {
+    border-color: #6a11cb;
+    box-shadow: 0 0 5px rgba(106, 17, 203, 0.5);
+  }
+  
+  .btn-primary {
+    background-color: #6a11cb;
+    border-color: #6a11cb;
+    transition: 0.3s;
+  }
+  
+  .btn-primary:hover {
+    background-color: #2575fc;
+    border-color: #2575fc;
+  }
+  

@@ -1,16 +1,8 @@
-/* Base Styles */
-* {
+*{
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', 'Roboto', sans-serif;
+  font-family: Arial;
+  border: border-box;
 }
-
-body {
-  background-color: #f7f7f7;
-  color: #333;
-}
-
 .navbar{
   height: 90px;
   background-color: #03045e;
@@ -49,11 +41,12 @@ body {
 }
 .pp{
   background-image: url(pp2.png);
-  height: 70px;
+  height: 40px;
   width: 80px;
   background-size: contain;
   background-repeat: no-repeat;
-  margin-top: 10px;
+  margin-top: -40px;
+  margin-left: 20px;
 }
 .navbar_panel1{
   display: flex;
@@ -67,12 +60,19 @@ body {
   border-bottom-right-radius: 5%;
 }
 .profClass {
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
+  color: #ade8f4;
   font-family: 'Times New Roman', Times, serif;
+  text-decoration: none;
 }
 .profClass:hover{
   color: #FAF0BE ;
   font-size: 1rem;
+}
+.profile{
+  margin-top: 50px;
+
+  
 }
 .navbar_tabs{
   display: flex;
@@ -92,7 +92,6 @@ body {
   border-top-left-radius: 5% ;
   border-bottom-left-radius: 5%
 }
-
 /* Main Container */
 .container {
   display: flex;
@@ -108,6 +107,13 @@ body {
   border-radius: 12px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
   text-align: center;
+}
+.profile-section img {
+  border-radius: 50%;
+  width: 150px;  /* Set a fixed width */
+  height: 150px;  /* Set a fixed height */
+  object-fit: cover; /* Ensures the image fits nicely within the space without distortion */
+  margin-bottom: 10px;
 }
 
 .profile-section img {

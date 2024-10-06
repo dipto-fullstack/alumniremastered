@@ -10,16 +10,16 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-}
-.navbar_items:hover{
+  }
+  .navbar_items:hover{
     color: #FAF0BE ;
     font-size: 1.3rem;
     /* border: 1px solid #FFD700; */
     transition: color 1s ease-in-out;
     background-position: 0 0;
     
-}
-.navbar_items{
+  }
+  .navbar_items{
     text-decoration: none;
     color: #ade8f4;
     font-size: 1.2rem;
@@ -30,51 +30,57 @@
     background-size: 200% 100%;
     background-position: 100% 0;
     transition: background-position 0.5s ease-in-out; 
-}
-.navbar_logo{
+  }
+  .navbar_logo{
     background-image: url(logo.jpeg);
     height: 80px;
     width: 90px;
     background-size: contain;
     background-repeat: no-repeat;
     margin-top: 10px;
-}
-.pp{
-    background-image: url(me.jpeg);
-    height: 70px;
-    width: 70px;
-    border-radius: 50%;
+  }
+  .pp{
+    background-image: url(pp2.png);
+    height: 40px;
+    width: 80px;
     background-size: contain;
     background-repeat: no-repeat;
-    margin-top: 10px;
-}
-.navbar_panel1{
+    margin-top: -40px;
+    margin-left: 20px;
+  }
+  .navbar_panel1{
     display: flex;
     align-items: center;
-}
-#searchwindow{
+  }
+  #searchwindow{
     width: 250px;
     height: 25px;
     border: 3px solid #FFD700  ;
     border-top-right-radius: 5%;
     border-bottom-right-radius: 5%;
-}
-.profClass {
-    margin-bottom: 1rem;
+  }
+  .profClass {
+    margin-bottom: 1.2rem;
+    color: #ade8f4;
     font-family: 'Times New Roman', Times, serif;
-    margin-left: -10px;
-}
-.profClass:hover{
+    text-decoration: none;
+  }
+  .profClass:hover{
     color: #FAF0BE ;
     font-size: 1rem;
-}
-.navbar_tabs{
+  }
+  .profile{
+    margin-top: 50px;
+  
+    
+  }
+  .navbar_tabs{
     display: flex;
     justify-content: space-evenly;
     /* border: 2px,solid,black; */
     width: 850px;
-}
-.searchicon{
+  }
+  .searchicon{
     height:32.5px;
     width: 25px;
     background-color: #FFD700 ;
@@ -85,8 +91,7 @@
     color: black;
     border-top-left-radius: 5% ;
     border-bottom-left-radius: 5%
-}
-
+  }
 /*body */
 
 .backpic{

@@ -10,16 +10,16 @@
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-}
-.navbar_items:hover{
+  }
+  .navbar_items:hover{
     color: #FAF0BE ;
     font-size: 1.3rem;
     /* border: 1px solid #FFD700; */
     transition: color 1s ease-in-out;
     background-position: 0 0;
     
-}
-.navbar_items{
+  }
+  .navbar_items{
     text-decoration: none;
     color: #ade8f4;
     font-size: 1.2rem;
@@ -30,51 +30,57 @@
     background-size: 200% 100%;
     background-position: 100% 0;
     transition: background-position 0.5s ease-in-out; 
-}
-.navbar_logo{
+  }
+  .navbar_logo{
     background-image: url(logo.jpeg);
     height: 80px;
     width: 90px;
     background-size: contain;
     background-repeat: no-repeat;
     margin-top: 10px;
-}
-.pp{
-    background-image: url(me.jpeg);
-    height: 70px;
-    width: 70px;
-    border-radius: 50%;
+  }
+  .pp{
+    background-image: url(pp2.png);
+    height: 40px;
+    width: 80px;
     background-size: contain;
     background-repeat: no-repeat;
-    margin-top: 10px;
-}
-.navbar_panel1{
+    margin-top: -40px;
+    margin-left: 20px;
+  }
+  .navbar_panel1{
     display: flex;
     align-items: center;
-}
-#searchwindow{
+  }
+  #searchwindow{
     width: 250px;
     height: 25px;
     border: 3px solid #FFD700  ;
     border-top-right-radius: 5%;
     border-bottom-right-radius: 5%;
-}
-.profClass {
-    margin-bottom: 1rem;
+  }
+  .profClass {
+    margin-bottom: 1.2rem;
+    color: #ade8f4;
     font-family: 'Times New Roman', Times, serif;
-    margin-left: -10px;
-}
-.profClass:hover{
+    text-decoration: none;
+  }
+  .profClass:hover{
     color: #FAF0BE ;
     font-size: 1rem;
-}
-.navbar_tabs{
+  }
+  .profile{
+    margin-top: 50px;
+  
+    
+  }
+  .navbar_tabs{
     display: flex;
     justify-content: space-evenly;
     /* border: 2px,solid,black; */
     width: 850px;
-}
-.searchicon{
+  }
+  .searchicon{
     height:32.5px;
     width: 25px;
     background-color: #FFD700 ;
@@ -85,18 +91,19 @@
     color: black;
     border-top-left-radius: 5% ;
     border-bottom-left-radius: 5%
-}
+  }
 
 /*body */
 
-.backpic{
+.backpic {
     height: 450px;
     width: 100%;
-    background-image: url("imagess.jpg");
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), white), url("imagess.jpg");
     background-size: cover;
     display: flex;
     flex-wrap: wrap;
 }
+
 
 .write{
     color:white;
@@ -158,7 +165,7 @@ button{
 .profimg{
     height: 200px;
     width:200px;
-    background-image: url("me.jpeg");
+    background-image: url("mainprofile.jpg");
     background-size: cover;
     border-radius: 50%;
     margin-left: 1100px;
@@ -295,4 +302,47 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
+}
+/* Modal container */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Modal content box */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Close button for modal */
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    cursor: pointer;
+}
+.edit-profile-btn {
+    display: inline-block; /* Ensures the text stays inline */
+    font-size: 1rem; /* Adjust as needed */
+    padding: 5px 10px; /* Adjust padding */
+    width: auto; /* Automatically adjusts the width to fit the text */
+    white-space: nowrap; /* Prevents line breaks inside the button */
 }

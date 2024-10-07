@@ -12,11 +12,11 @@
         </div>
         <div class="navbar_tabs">
             <a href="dashboard.html" class="navbar_items">Home</a> 
-            <a href="#" class="navbar_items">About Us</a>
-            <a href="#" class="navbar_items">My Attachments</a>
+            <a href="Aboutus.html" class="navbar_items">About Us</a>
+            <a href="attachments.html" class="navbar_items">My Attachments</a>
             <a href="gallery.html" class="navbar_items">Gallery</a>
             <a href="events.html" class="navbar_items">Events</a>
-            <a href="#" class="navbar_items">Notifications</a>
+            <a href="notifications.html" class="navbar_items">Notifications</a>
         </div>
         <div class="profile">
             <div class="pp"></div>
@@ -38,14 +38,14 @@
         <!-- Profile Section -->
         <div class="profile-section">
             <img src="mainprofile.jpg" alt="Profile Photo">
-            <h2>Your Name</h2>
+            <h2>Sylvia Barick</h2>
             <p>Institute of Engineering and Management (IEM)</p>
             <p>CSE (AI and ML)</p>
             <div class="profile-links">
                 <a href="profile.html">Profile</a>
-                <a href="#">Latest News</a>
-                <a href="#">Groups</a>
-                <a href="#">Saved Items</a>
+                <a href="events.html">Latest News</a>
+                <a href="groups.html">Groups</a>
+                <a href="saved.html">Saved Items</a>
                 <a href="events.html">Events</a>
             </div>
         </div>
@@ -196,7 +196,28 @@
                 </div>
             </div>
         </div>
+     <!-- Chat Button -->
+    <div id="chat-button" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
+    <div style="width: 60px; height: 60px; border-radius: 50%; background-color: #002b5c; display: flex; align-items: center; justify-content: center; cursor: pointer;">
+        <img src="chat.png" alt="Chat" style="width: 30px; height: 30px;">
     </div>
+    </div>
+
+    <!-- Chatbot Iframe -->
+    <div id="chatbot-container" style="display: none; position: fixed; bottom: 90px; right: 20px; width: 400px; height: 600px; z-index: 1000; border-radius: 12px; overflow: hidden;">
+        <iframe src="https://cdn.botpress.cloud/webchat/v2/shareable.html?botId=9ec2d167-08a3-4a32-8d89-97f978bd85e6" style="width: 100%; height: 100%; border: none;"></iframe>
+    </div>
+    <script>
+    const chatButton = document.getElementById('chat-button');
+    const chatbotContainer = document.getElementById('chatbot-container');
+    let chatVisible = false;
+
+    chatButton.onclick = function() {
+        chatVisible = !chatVisible;
+        chatbotContainer.style.display = chatVisible ? 'block' : 'none';
+    };
+    </script>
+</div>
+    
 </body>
 </html>
-

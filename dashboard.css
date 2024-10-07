@@ -254,6 +254,7 @@
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+
 }
 
 .network-section h2 {
@@ -308,3 +309,32 @@
 .network-item button:hover {
   background-color: #0054a6;
 }
+/* Chat Button */
+.chat-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 60px;
+  height: 60px;
+  background-color: #1477d9;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 1000; /* Ensure it appears above other elements */
+}
+
+#chat-button:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+
+.chat-button img {
+  width: 60%; /* Resize icon inside */
+  height: 60%;
+  filter: brightness(0) invert(1); /* Optional: make white icon for better contrast */
+}
+

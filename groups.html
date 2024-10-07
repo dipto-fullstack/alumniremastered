@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Groups Chat</title>
+  <style>
+    /* General full-screen styling */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+    body {
+      display: flex;
+      height: 100vh;
+      overflow: hidden;
+      background-color: #f0f2f5;
+    }
+
+    /* Sidebar for group list */
+    .sidebar {
+      width: 25%;
+      max-width: 300px;
+      background-color: #ffffff;
+      border-right: 1px solid #ddd;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .sidebar-header {
+      background-color: #4a90e2;
+      color: #fff;
+      padding: 20px;
+      font-size: 1.5em;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+    }
+
+    /* Back button styling */
+    .back-button {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      color: #fff;
+      font-size: 1.2em; /* Adjusted font size */
+      margin-right: 10px;
+    }
+
+    .back-button svg {
+      width: 20px; /* Adjusted size for better visibility */
+      height: 20px; /* Adjusted size for better visibility */
+      margin-right: 6px;
+    }
+
+    /* Group items with profile images */
+    .group-item {
+      padding: 15px;
+      font-size: 1.1em;
+      border-bottom: 1px solid #f0f0f0;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      transition: background-color 0.3s;
+    }
+
+    .group-item img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #ddd;
+    }
+
+    .group-item:hover {
+      background-color: #f5f7fa;
+    }
+
+    /* Chat area */
+    .chat-area {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      background-color: #f7f9fc;
+    }
+
+    .chat-header {
+      padding: 20px;
+      background-color: #ffffff;
+      border-bottom: 1px solid #ddd;
+      font-size: 1.3em;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .chat-box {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+      background-color: #fefefe;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .chat-message {
+      max-width: 60%;
+      padding: 10px;
+      margin: 8px 0;
+      border-radius: 8px;
+      font-size: 1em;
+      line-height: 1.4em;
+      color: #333;
+      background-color: #e9f5ff;
+      align-self: flex-start;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .chat-message.self {
+      background-color: #d1e7dd;
+      align-self: flex-end;
+    }
+
+    .chat-message img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+    }
+
+    /* Chat input area */
+    .chat-input {
+      display: flex;
+      padding: 15px;
+      background-color: #ffffff;
+      border-top: 1px solid #ddd;
+    }
+
+    .chat-input input {
+      flex: 1;
+      padding: 10px;
+      font-size: 1em;
+      border: 1px solid #ddd;
+      border-radius: 5px 0 0 5px;
+      outline: none;
+    }
+
+    .chat-input button {
+      padding: 10px 20px;
+      background-color: #4a90e2;
+      color: #fff;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 0 5px 5px 0;
+      transition: background-color 0.3s;
+    }
+
+    .chat-input button:hover {
+      background-color: #357ab8;
+    }
+
+    /* Scrollbar styling */
+    .chat-box::-webkit-scrollbar {
+      width: 6px;
+    }
+    .chat-box::-webkit-scrollbar-thumb {
+      background-color: #ddd;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar with groups -->
+  <div class="sidebar">
+    <div class="sidebar-header">
+      <a href="dashboard.html" class="back-button">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
+          <path d="M5.854 4.146a.5.5 0 1 1-.708.708L2.707 2.707a1 1 0 0 1 0-1.414L5.146.146a.5.5 0 1 1 .708.708L3.5 2.207H13.5a.5.5 0 0 1 0 1H3.5l2.354 2.354z"/>
+        </svg>
+      </a>
+      <span>Groups & Communities</span>
+    </div>
+    <div class="group-item" onclick="openChat('group1')">
+      <img src="group1.jpg" alt="Profile Pic">
+      <span>Friends Forever</span>
+    </div>
+    <div class="group-item" onclick="openChat('Group 2')">
+      <img src="group2.jpg" alt="Profile Pic">
+      <span>Section D</span>
+    </div>
+    <div class="group-item" onclick="openChat('Community 1')">
+      <img src="group3.jpg" alt="Profile Pic">
+      <span>3 Musketeers</span>
+    </div>
+    <div class="group-item" onclick="openChat('Community 2')">
+      <img src="group4.jpg" alt="Profile Pic">
+      <span>LOSERS</span>
+    </div>
+    <div class="group-item" onclick="openChat('Tech Talks')">
+      <img src="group5.jpg" alt="Profile Pic">
+      <span>Tech Talks</span>
+    </div>
+    <div class="group-item" onclick="openChat('Study Group')">
+      <img src="group6.jpg" alt="Profile Pic">
+      <span>Study Group</span>
+    </div>
+  </div>
+
+  <!-- Main chat area -->
+  <div class="chat-area">
+    <div class="chat-header" id="chatHeader">Select a Group to Chat</div>
+    <div class="chat-box" id="chatBox"></div>
+    <div class="chat-input">
+      <input type="text" id="chatInput" placeholder="Type a message...">
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <script>
+    function openChat(groupName) {
+      document.getElementById('chatHeader').innerText = `${groupName} Chat`;
+      document.getElementById('chatBox').innerHTML = ''; // Clear previous chat
+    }
+
+    function sendMessage() {
+      const chatBox = document.getElementById('chatBox');
+      const message = document.getElementById('chatInput').value.trim();
+      if (message) {
+        // Display the message in the chat box
+        const messageElement = document.createElement('div');
+        messageElement.classList.add('chat-message', 'self');
+        messageElement.innerHTML = `<img src="https://via.placeholder.com/30" alt="Your Pic"> ${message}`;
+        chatBox.appendChild(messageElement);
+        document.getElementById('chatInput').value = '';
+        
+        // Scroll to the bottom
+        chatBox.scrollTop = chatBox.scrollHeight;
+      }
+    }
+  </script>
+
+</body>
+</html>

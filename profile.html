@@ -11,12 +11,12 @@
             </div>
         </div>
         <div class="navbar_tabs">
-            <a href="#" class="navbar_items">Home</a> 
-            <a href="#" class="navbar_items">About Us</a>
-            <a href="#" class="navbar_items">My Attachments</a>
-            <a href="#" class="navbar_items">Alumni Directory</a>
-            <a href="#" class="navbar_items">Announcements</a>
-            <a href="#" class="navbar_items">Notifications</a>
+            <a href="dashboard.html" class="navbar_items">Home</a> 
+            <a href="Aboutus.html" class="navbar_items">About Us</a>
+            <a href="attachments.html" class="navbar_items">My Attachments</a>
+            <a href="gallery.html" class="navbar_items">Gallery</a>
+            <a href="events.html" class="navbar_items">Events</a>
+            <a href="notifications.html" class="navbar_items">Notifications</a>
         </div>
         <div class="profile">
             <div class="pp"></div>
@@ -26,16 +26,31 @@
     </div>
     <title>Alumini Network</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="profile1.css">
+    <link rel="stylesheet" href="profile.css">
 </head>
 <body>
     <div class="backpic">
         <div class="write">
             <h1>Hello Sylvia</h1>
             <p>Aspiring Tech Professional | B-Tech in Computer Science</p><br>
-            <button >
-                <a href="edit.html" class="edit"><h6>Edit Profile</h6></a>
-            </button>
+            <button onclick="toggleEditProfileModal()" class="edit-profile-btn">Edit Profile</button>
+            <!-- Edit Profile Modal -->
+<div id="editProfileModal" class="modal">
+    <div class="modal-content">
+        <span class="close-button" onclick="toggleEditProfileModal()">&times;</span>
+        <h2>Edit Profile</h2>
+        <form id="editProfileForm" onsubmit="submitProfileEdit(event)">
+            <label for="editName">Name:</label>
+            <input type="text" id="editName" name="name" placeholder="Enter your name" required>
+            
+            <label for="editBio">Bio:</label>
+            <textarea id="editBio" name="bio" placeholder="Enter your bio" required></textarea>
+            
+            <button type="submit">Save Changes</button>
+        </form>
+    </div>
+</div>
+
             
         </div>
         <div class="box11">
@@ -91,6 +106,36 @@
         </div>
         <div class="profimg"></div>
     </div>
+    
+    <script>
+        function toggleEditProfileModal() {
+            const modal = document.getElementById('editProfileModal');
+            modal.style.display = modal.style.display === 'block' ? 'none' : 'block';
+        }
+    
+        function submitProfileEdit(event) {
+            event.preventDefault(); // Prevent form submission
+            
+            // Get values from input fields
+            const name = document.getElementById('editName').value;
+            const bio = document.getElementById('editBio').value;
+    
+            // Update profile details on the page
+            document.querySelector('.name').innerText = name;
+            document.querySelector('.bio').innerText = bio;
+    
+            // Hide the modal
+            toggleEditProfileModal();
+        }
+    
+        // Close modal if user clicks outside of it
+        window.onclick = function(event) {
+            const modal = document.getElementById('editProfileModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
     
 </body>
 </html>

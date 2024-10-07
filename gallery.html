@@ -1,46 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A professional gallery with filter tabs for photos and videos.">
-    <title>Professional Gallery - Only Photos Tab</title>
-    <link rel="stylesheet" href="gallery.css">
-</head>
-<body>
-
-    <div class="container">
-        <!-- Navigation Tabs -->
-        <div class="tabs">
-            <button class="tab-btn active" data-filter="all">All</button>
-            <button class="tab-btn" data-filter="photos">Photos</button>
-            <button class="tab-btn" data-filter="videos">Videos</button>
+    <div class="navbar">
+        <div class="navbar_panel1">
+            <div class="navbar_logo"></div>
+            <div class="searchicon">
+                <i class="fa-solid fa-magnifying-glass" ></i>
+            </div>
+            <div class="searchbox"><input placeholder="search" id="searchwindow">
+            </div>
         </div>
-
-        <!-- Gallery Grid -->
-        <div class="gallery" id="gallery">
-            <!-- Photo Items -->
-            <div class="item photos">
-                <img src="https://via.placeholder.com/300x200" alt="Photo 1">
-            </div>
-            <div class="item photos">
-                <img src="https://via.placeholder.com/300x200" alt="Photo 2">
-            </div>
-            <div class="item photos">
-                <img src="https://via.placeholder.com/300x200" alt="Photo 3">
-            </div>
-
-            <!-- Video Items -->
-            <div class="item videos">
-                <video src="https://www.w3schools.com/html/mov_bbb.mp4" controls></video>
-            </div>
-            <div class="item videos">
-                <video src="https://www.w3schools.com/html/movie.mp4" controls></video>
+        <div class="navbar_tabs">
+            <a href="dashboard.html" class="navbar_items">Home</a> 
+            <a href="Aboutus.html" class="navbar_items">About Us</a>
+            <a href="attachments.html" class="navbar_items">My Attachments</a>
+            <a href="gallery.html" class="navbar_items">Gallery</a>
+            <a href="events.html" class="navbar_items">Events</a>
+            <a href="notifications.html" class="navbar_items">Notifications</a>
+        </div>
+        <div class="profile">
+            <div class="pp"></div>
+            <div class="profile_caption"><a href="profile.html" class="profClass">My Account</a>
             </div>
         </div>
     </div>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alumni Gallery - IEM-UEM Group</title>
+    <link rel="stylesheet" href="gallery.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Alumni Gallery</h1>
+            <p class="description">Celebrate our alumni's college memories and achievements. Scroll to explore their journey through photos and videos.</p>
+        </header>
+        
+        <div class="gallery">
+            <!-- Sample Image and Video Thumbnails -->
+            <div class="gallery-item" onclick="openModal('image1.jpg')"><img src="image1.jpg" alt="Alumni Photo 1"></div>
+            <div class="gallery-item" onclick="openModal('image2.jpg')"><img src="image2.jpg" alt="Alumni Photo 2"></div>
+            <div class="gallery-item" onclick="openModal('image3.jpg')"><img src="image3.jpg" alt="Alumni Photo 3"></div>
+            <div class="gallery-item" onclick="openModal('image4.jpg')"><img src="image4.jpg" alt="Alumni Photo 4"></div>
+            <div class="gallery-item" onclick="openModal('image5.jpg')"><img src="image5.jpg" alt="Alumni Photo 5"></div>
+            <div class="gallery-item" onclick="openModal('video1.mp4', true)">
+                <video src="video1.mp4" muted></video>
+                <span class="video-icon">🎬</span>
+            </div>
+            <div class="gallery-item" onclick="openModal('video2.mp4', true)">
+                <video src="video2.mp4" muted></video>
+                <span class="video-icon">🎬</span>
+            </div>
+            <div class="gallery-item" onclick="openModal('image6.jpg')"><img src="image6.jpg" alt="Alumni Photo 6"></div>
+            <div class="gallery-item" onclick="openModal('image7.jpg')"><img src="image7.jpg" alt="Alumni Photo 7"></div>
+            <div class="gallery-item" onclick="openModal('image8.jpg')"><img src="image8.jpg" alt="Alumni Photo 8"></div>
+            <!-- More Photos and Videos to Fill Space -->
+            <div class="gallery-item" onclick="openModal('image9.jpg')"><img src="image9.jpg" alt="Alumni Photo 9"></div>
+            <div class="gallery-item" onclick="openModal('image10.jpg')"><img src="image10.jpg" alt="Alumni Photo 10"></div>
+        </div>
+    </div>
 
-    <script src="gallery.js"></script>
+    <!-- Modal for Full View -->
+    <div id="modal" class="modal" onclick="closeModal()">
+        <span class="close">&times;</span>
+        <img id="modal-img" class="modal-content" src="">
+        <video id="modal-video" class="modal-content" controls></video>
+    </div>
 
+    <script>
+        function openModal(src, isVideo = false) {
+            const modal = document.getElementById("modal");
+            const modalImg = document.getElementById("modal-img");
+            const modalVideo = document.getElementById("modal-video");
+
+            if (isVideo) {
+                modalImg.style.display = "none";
+                modalVideo.style.display = "block";
+                modalVideo.src = src;
+            } else {
+                modalImg.style.display = "block";
+                modalVideo.style.display = "none";
+                modalImg.src = src;
+            }
+            modal.style.display = "block";
+        }
+
+        function closeModal() {
+            const modal = document.getElementById("modal");
+            const modalVideo = document.getElementById("modal-video");
+
+            modal.style.display = "none";
+            modalVideo.pause();
+        }
+    </script>
 </body>
 </html>
+
+
